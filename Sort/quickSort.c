@@ -31,19 +31,19 @@ int findPas(int *s,int low,int high)
 			low++;
 		//找到交换
 		s[high] = s[low];
+	}
 
 		//low=high了，把基准的值赋给low/high
 		s[low] = key;
 
 		//返回分割点的位置
 		return low;
-	}
 }
 
 void Quick_Sort(int *s,int low,int high)
 {
 	int pas;
-	if(low < high)
+	if(low < high) 
 	{
 		pas = findPas(s,low,high);
 		Quick_Sort(s,low,pas-1);//对左边进行快排
