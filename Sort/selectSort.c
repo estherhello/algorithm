@@ -12,23 +12,18 @@
 
 void select(int *s,int len)
 {
-	int i,j,k,min,t;
+	int i,j,t,min;
 	for(i = 0;i < len;i++)
-	{   
-		min = s[i];
-		k = i;
+	{
+		min = i;
 		for(j = len-1;j > i;j--)
 		{
-			if(s[j] < min)
-			{
-				min = s[j];
-			    k = j;
-			}
-				
+			if(s[j] < s[min])
+				min = j;
 		}
 		t = s[i];
-		s[i] = s[k];
-		s[k] = t;
+		s[i] = s[min];
+		s[min] = t;
 	}
 }
 

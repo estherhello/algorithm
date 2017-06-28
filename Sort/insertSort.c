@@ -65,3 +65,24 @@ void main()
 	free(s);
 	s = 0;
 }
+
+
+//改进版
+void insert(int *a, int len)
+{
+	int i,j,k;
+	for(i = 1;i < len;i++)
+	{
+		//向前逐个比较，直到找到插入的地方
+		if(a[i] < a[i-1])
+		{
+			k = a[i];
+			for(j = i-1;j >= 0 && a[j] >= k;j--)
+			{
+				a[j+1] = a[j];
+			}
+			a[j+1] = k;//插入
+		}
+		
+	}
+}
